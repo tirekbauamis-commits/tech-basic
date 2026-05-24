@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Laboratorium komputer gelap">
+  <rect width="1600" height="900" fill="#000"/>
+  <g opacity=".92">
+    <path d="M0 565h1600v335H0z" fill="#080808"/>
+    <path d="M120 555h1360" stroke="#262626"/>
+    <path d="M205 395h270v165H205zM665 350h320v210H665zM1175 405h255v155h-255z" fill="#101010" stroke="#3a3a3a"/>
+    <path d="M230 420h220v115H230zM695 380h260v150H695zM1200 430h205v105h-205z" fill="#161616"/>
+    <path d="M255 438h95M255 462h160M255 486h120M720 402h125M720 430h200M720 458h155M1224 450h120M1224 478h150" stroke="#c3d9f3" stroke-width="3" opacity=".45"/>
+    <path d="M280 560l-35 95M405 560l35 95M760 560l-45 112M900 560l45 112M1240 560l-35 95M1370 560l35 95" stroke="#262626" stroke-width="8"/>
+    <path d="M150 665h330M610 682h430M1130 665h350" stroke="#141414" stroke-width="34"/>
+  </g>
+  <g opacity=".55">
+    <path d="M0 210h1600M0 310h1600M0 410h1600" stroke="#0d0d0d"/>
+    <path d="M190 0v540M515 0v560M1070 0v560M1450 0v540" stroke="#0d0d0d"/>
+  </g>
+</svg>

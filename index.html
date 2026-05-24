@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Basic - Belajar Dasar Komputer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff2d78'/%3E%3Cpath d='M18 18h15c5 0 9 4 9 9v19H25c-4 0-7-3-7-7V18z' fill='none' stroke='white' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M33 18h13v28H33' fill='none' stroke='white' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M24 28h7M24 36h7' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260524-theme8" />
+</head>
+<body class="is-auth">
+
+  <!-- AUTH SCREEN -->
+  <section class="auth-screen view active" data-view="auth">
+    <button class="theme-toggle auth-theme-toggle" type="button" data-theme-toggle title="Ubah mode pagi/malam"><span data-theme-icon>&#9728;</span><b data-theme-label>Mode Pagi</b></button>
+    <div class="auth-bg">
+      <div class="auth-blob blob1"></div>
+      <div class="auth-blob blob2"></div>
+    </div>
+    <div class="auth-inner">
+      <div class="auth-brand">
+        <div class="brand-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 18h15c5 0 9 4 9 9v21H24c-4 0-8-4-8-8V18z" />
+            <path d="M40 27c0-5 4-9 9-9h1v30H40" />
+            <path d="M24 29h8M24 38h8" />
+          </svg>
+        </div>
+        <strong>Tech Basic</strong>
+        <span>Pembelajaran Dasar Komputer untuk Pemula</span>
+      </div>
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-auth-mode="login">Login</button>
+          <button type="button" class="auth-tab" data-auth-mode="register">Register</button>
+        </div>
+        <form data-auth-form autocomplete="off">
+          <div class="field register-only" style="display:none">
+            <label>Nama Lengkap</label>
+            <div class="input-wrap"><input type="text" name="name" /></div>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <div class="input-wrap"><input type="email" name="email" required /></div>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <div class="input-wrap password-wrap"><input type="password" name="password" required minlength="6" /><button type="button" class="password-toggle" data-password-toggle aria-label="Lihat password"><svg viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path><circle cx="12" cy="12" r="3"></circle></svg></button></div>
+          </div>
+          <p class="form-msg" data-form-message></p>
+          <button class="btn-primary full" type="submit" data-submit-label>Masuk</button>
+        </form>
+        <div class="auth-code-banner">
+          <img src="assets/img/computer-lab.svg" alt="Belajar Komputer" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP SHELL -->
+  <div class="app-shell" data-app-shell style="display:none">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand">
+        <div class="brand-icon-wrap sm" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 18h15c5 0 9 4 9 9v21H24c-4 0-8-4-8-8V18z" />
+            <path d="M40 27c0-5 4-9 9-9h1v30H40" />
+            <path d="M24 29h8M24 38h8" />
+          </svg>
+        </div>
+        <div>
+          <strong>Tech Basic</strong>
+          <span>Learning Platform</span>
+        </div>
+      </div>
+      <nav class="side-nav">
+        <a href="#" data-route="dashboard" data-nav-item="dashboard">
+          <span class="nav-icon">&#127968;</span>Dashboard
+        </a>
+        <a href="#" data-route="materi" data-nav-item="materi">
+          <span class="nav-icon">&#128218;</span>Materi
+        </a>
+        <a href="#" data-route="quiz" data-nav-item="quiz">
+          <span class="nav-icon">&#128221;</span>Kuis
+        </a>
+        <a href="#" data-route="progress" data-nav-item="progress">
+          <span class="nav-icon">&#128200;</span>Progres
+        </a>
+        <a href="#" data-route="pencapaian" data-nav-item="pencapaian">
+          <span class="nav-icon">&#128100;</span>Profil
+        </a>
+      </nav>
+      <button class="btn-logout" type="button" data-logout>
+        <span>&#8618;</span> Keluar
+      </button>
+    </aside>
+
+    <!-- MOBILE TOPBAR -->
+    <header class="mobile-topbar">
+      <button class="menu-toggle" type="button" data-menu-toggle>&#9776;</button>
+      <div class="topbar-brand">
+        <div class="brand-icon-wrap xs" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 18h15c5 0 9 4 9 9v21H24c-4 0-8-4-8-8V18z" />
+            <path d="M40 27c0-5 4-9 9-9h1v30H40" />
+            <path d="M24 29h8M24 38h8" />
+          </svg>
+        </div>
+        <strong>Tech Basic</strong>
+      </div>
+    </header>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- DASHBOARD -->
+      <section class="view" data-view="dashboard">
+        <header class="page-header dashboard-header">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Selamat datang, <strong data-student-name>Siswa</strong>! Mari lanjutkan pembelajaran Anda.</p>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle title="Ubah mode pagi/malam"><span data-theme-icon>&#9728;</span><b data-theme-label>Mode Pagi</b></button>
+        </header>
+
+        <div class="stat-grid">
+          <article class="stat-card">
+            <div class="stat-icon pink">&#128218;</div>
+            <div class="stat-body">
+              <strong data-completed-count>0</strong>
+              <p>Materi Selesai</p>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon green">&#127941;</div>
+            <div class="stat-body">
+              <strong data-quiz-passed>0/12</strong>
+              <p>Kuis Lulus</p>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon purple">&#128200;</div>
+            <div class="stat-body">
+              <strong data-progress-percent>0%</strong>
+              <p>Progress Total</p>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon orange">&#9201;</div>
+            <div class="stat-body">
+              <strong data-study-hours>0h</strong>
+              <p>Jam Belajar</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="dashboard-panels">
+          <article class="panel">
+            <h2 class="panel-title">Riwayat Terakhir</h2>
+            <div data-history-list class="history-list"></div>
+          </article>
+          <article class="panel">
+            <h2 class="panel-title">Rekomendasi Materi</h2>
+            <div data-recommendation-list class="rec-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- MATERI -->
+      <section class="view" data-view="materi">
+        <header class="page-header">
+          <div>
+            <h1>Materi Belajar</h1>
+            <p>12 modul komprehensif untuk belajar komputer dari nol</p>
+          </div>
+        </header>
+        <div class="material-grid" data-material-grid></div>
+      </section>
+
+      <!-- LESSON -->
+      <section class="view" data-view="lesson">
+        <button class="btn-back" type="button" data-route="materi">&larr; Kembali ke Materi</button>
+        <article class="lesson-card" data-lesson-shell></article>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="view" data-view="quiz">
+        <div data-quiz-shell></div>
+      </section>
+
+      <!-- PROGRESS -->
+      <section class="view" data-view="progress">
+        <header class="page-header">
+          <div>
+            <h1>Progress Belajar</h1>
+            <p>Pantau perkembangan pembelajaran Anda berdasarkan data belajar asli</p>
+          </div>
+        </header>
+
+        <div class="progress-summary">
+          <article class="summary-card" style="background:linear-gradient(135deg,#ff2d78,#ff6ab2)">
+            <div class="summary-icon">&#127919;</div>
+            <strong data-progress-percent-alt>0%</strong>
+            <p>Progress Total</p>
+          </article>
+          <article class="summary-card" style="background:linear-gradient(135deg,#00c853,#00e676)">
+            <div class="summary-icon">&#128218;</div>
+            <strong data-completed-count-alt>0</strong>
+            <p>Materi Selesai</p>
+          </article>
+          <article class="summary-card" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">
+            <div class="summary-icon">&#127941;</div>
+            <strong data-quiz-ratio>0/12</strong>
+            <p>Kuis Lulus</p>
+          </article>
+          <article class="summary-card" style="background:linear-gradient(135deg,#ff6d00,#ff9800)">
+            <div class="summary-icon">&#9201;</div>
+            <strong data-total-hours>0h</strong>
+            <p>Total Waktu</p>
+          </article>
+        </div>
+
+        <div class="progress-panels">
+          <article class="panel activity-panel">
+            <div class="panel-head">
+              <span class="badge-icon" style="background:rgba(255,45,120,.15);color:#ff2d78">&#128197;</span>
+              <div>
+                <h2>Aktivitas Minggu Ini</h2>
+                <p data-week-total>Total: 0 jam</p>
+              </div>
+            </div>
+            <div class="bar-chart" data-week-chart></div>
+            <div class="module-progress-list" data-module-progress></div>
+          </article>
+          <article class="panel streak-panel">
+            <div class="panel-head">
+              <span class="badge-icon" style="background:rgba(255,109,0,.15);color:#ff6d00">&#128200;</span>
+              <div>
+                <h2>Streak Belajar</h2>
+                <p>Konsistensi adalah kunci!</p>
+              </div>
+            </div>
+            <div class="streak-number">
+              <strong data-streak-days>0</strong>
+              <span>Hari berturut-turut</span>
+            </div>
+            <div class="streak-grid" data-streak-grid></div>
+            <p class="streak-label">4 minggu terakhir</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROFIL -->
+      <section class="view profile-view" data-view="pencapaian">
+        <header class="profile-header">
+          <span>PROFIL SISWA</span>
+          <h1 data-profile-name-hero>Siswa</h1>
+          <p data-profile-email-hero>email@example.com</p>
+        </header>
+
+        <article class="profile-card">
+          <div class="profile-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21a8 8 0 0 0-16 0" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <div class="profile-info">
+            <strong data-profile-name>Siswa</strong>
+            <p data-profile-email>email@example.com</p>
+          </div>
+        </article>
+
+        <div class="achievement-hero">
+          <div class="ach-stat">
+            <span>&#127942;</span>
+            <strong data-achievement-count>0/8</strong>
+            <p>Pencapaian</p>
+          </div>
+          <div class="ach-stat">
+            <span>&#11088;</span>
+            <strong data-total-points>0</strong>
+            <p>Total Poin</p>
+          </div>
+          <div class="ach-stat">
+            <span>&#128202;</span>
+            <strong data-achievement-progress>0%</strong>
+            <p>Progress</p>
+          </div>
+          <div class="ach-stat">
+            <span>&#128081;</span>
+            <strong data-rank>Bronze Member</strong>
+            <p>Peringkat</p>
+          </div>
+        </div>
+
+        <div class="achievement-grid" data-achievement-grid></div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="app-modal" data-app-modal aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-icon" data-modal-icon>!</div>
+      <h2 id="modal-title" data-modal-title>Konfirmasi</h2>
+      <p data-modal-message></p>
+      <div class="modal-actions" data-modal-actions></div>
+    </section>
+  </div>
+
+  <script src="app.js?v=20260524-theme8"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
